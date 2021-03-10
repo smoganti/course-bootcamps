@@ -15,25 +15,35 @@ public class StackLinkedListImpl<E> implements StackInterface<E>
    public void push(E e)
    {
       /** Add code here **/
-
+      LinkEntry<E> ne = new LinkEntry<E>();
+      ne.element = e;
+      // head.next=ne;
+      // head.element = e;
+      ne.next = head;
+      head = ne;
+      num_elem++;
+      return;
    }
 
    public E pop()
    {
       /** Add code here **/
-	   return null;
+      E e = head.element;
+      head = head.next;
+      num_elem--;
+      return e;
    }
 
    public E peek()
    {
       /** Add code here **/
-	   return null;
+      return head.element;
    }
 
    public int size()
    {
       /** Add code here **/
-	   return num_elem;
+      return num_elem;
    }
 
    /* ------------------------------------------------------------------- */
